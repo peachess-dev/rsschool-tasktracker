@@ -1,0 +1,9 @@
+.header-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header-container :nth-child(2) {
+  margin-left: auto;
+}
