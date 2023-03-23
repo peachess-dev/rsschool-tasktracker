@@ -1,0 +1,24 @@
+.footer-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.author a {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+}
+
+.author img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.logo img {
+  width: 2rem;
+  height: 2rem;
+}
