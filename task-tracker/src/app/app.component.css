@@ -1,0 +1,32 @@
+.app-container {
+  margin: 0;
+  padding: 0;
+}
+
+.app-header {
+  position: fixed;
+  z-index: 1;
+  padding: 1rem;
+  background-color: #fff;
+  min-width: 100%;
+}
+
+/* nav {
+  background-color: #ddd;
+  height: calc(100% - 100px);
+  top: 50px;
+  overflow-y: auto;
+} */
+
+.app-body {
+  /* margin-top: 1rem; */
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 1rem);
+}
+
+.app-footer {
+  background-color: #fff;
+  height: 50px;
+  bottom: 0;
+}
