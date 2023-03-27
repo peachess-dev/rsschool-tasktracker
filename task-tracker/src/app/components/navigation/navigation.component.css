@@ -1,0 +1,10 @@
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+}
+
+.my-boards {
+  display: flex;
+}

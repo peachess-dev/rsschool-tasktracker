@@ -1,0 +1,11 @@
+.main-container {
+  display: flex;
+}
+
+.navigation {
+  min-width: 30%;
+}
+
+.boards {
+  min-width: 70%;
+}

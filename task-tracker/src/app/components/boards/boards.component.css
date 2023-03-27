@@ -1,0 +1,5 @@
+.boards-container {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+}
