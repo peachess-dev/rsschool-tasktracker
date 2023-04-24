@@ -1,0 +1,21 @@
+.board-header {
+  display: flex;
+}
+
+.tasks {
+  margin: 0.5rem 0;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tasks-header .btn-delete {
+  margin: 0.5rem;
+}

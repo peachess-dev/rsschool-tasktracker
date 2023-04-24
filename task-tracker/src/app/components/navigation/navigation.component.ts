@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -6,9 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent implements OnInit {
+  @Input() boards: string[] = [];
+  @Output() createBoard = new EventEmitter<void>();
+
+  constructor() {}
+
   ngOnInit(): void {}
 
-  @Input() numOfBoards: number = 0;
-
-  arrayOfBoards = new Array(this.numOfBoards);
+  onCreateBoard() {
+    this.createBoard.emit();
+  }
 }

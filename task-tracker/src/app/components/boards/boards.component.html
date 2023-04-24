@@ -1,8 +1,5 @@
 <div class="boards-container">
   <div *ngFor="let board of boards">
-    <p-button
-      label="{{ board }}"
-      styleClass="p-button-outlined p-button-secondary"
-    ></p-button>
+    <app-board (delete)="onDeleteBoard(board)"></app-board>
   </div>
 </div>

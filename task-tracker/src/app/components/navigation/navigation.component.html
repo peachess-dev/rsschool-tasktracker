@@ -8,11 +8,14 @@
       <p-button
         label="+"
         styleClass="p-button-rounded p-button-text p-button-secondary"
+        (click)="onCreateBoard()"
       ></p-button>
     </div>
-    <p>Number of boards: {{ numOfBoards }}</p>
-    <div *ngFor="let singleBoard of arrayOfBoards">
-      <p>My board {{ singleBoard }}</p>
+    <div *ngFor="let board of boards">
+      <p-button
+        label="{{ board }}"
+        styleClass="p-button-outlined p-button-secondary"
+      ></p-button>
     </div>
   </div>
 </div>
