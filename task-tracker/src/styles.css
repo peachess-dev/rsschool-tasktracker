@@ -6,15 +6,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* 
-body::before {
-  height: 100vh;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #dda7ff;
-  filter: blur(150rem);
-  z-index: -1;
-} */
+
+ul {
+  list-style-type: none;
+}

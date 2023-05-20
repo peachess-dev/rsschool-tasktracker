@@ -1,0 +1,28 @@
+<div class="list-container">
+  <div class="list-header">
+    <h3>{{ list.name }}</h3>
+    <p-button
+      icon="pi pi-times"
+      styleClass="p-button-rounded p-button-danger p-button-text"
+      (click)="deleteList()"
+    ></p-button>
+  </div>
+
+  <ul class="list-content">
+    <li *ngFor="let task of list.tasks">
+      <app-task
+        [task]="task"
+        (updateTask)="updateTask($event)"
+        (deleteTask)="deleteTask(task.id)"
+      ></app-task>
+    </li>
+  </ul>
+
+  <div class="list-footer">
+    <p-button
+      label="Add new task"
+      styleClass="p-button-raised p-button-text"
+      (click)="addTask(task)"
+    ></p-button>
+  </div>
+</div>

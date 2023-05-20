@@ -6,7 +6,7 @@
 }
 
 .block {
-  height: 100vh;
+  /* height: 100vh; */
   width: calc(100% - 20vw);
   overflow-y: auto;
   display: flex;

@@ -1,5 +1,33 @@
 .boards-container {
   display: flex;
-  gap: 2rem;
-  padding: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.boards-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boards-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.boards-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-content {
+  display: flex;
+}
+
+.list-content ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
 }

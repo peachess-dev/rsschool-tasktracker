@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { EntitiesService } from 'src/app/services/entities.service';
-import { Board, List, Task } from 'src/app/Task';
+import { Board } from 'src/app/Task';
 
 @Component({
   selector: 'app-boards',
@@ -8,24 +8,33 @@ import { Board, List, Task } from 'src/app/Task';
   styleUrls: ['./boards.component.css'],
 })
 export class BoardsComponent implements OnInit {
-  constructor(private entitiesService: EntitiesService) {}
+  boards: Board[] = [];
+  nameInput: string = '';
 
-  boards: string[] = [];
+  constructor(private entitiesService: EntitiesService) {}
 
   ngOnInit(): void {
     this.boards = this.entitiesService.getAllBoards();
   }
 
-  @Output() boardClicked = new EventEmitter<string>();
-
-  onBoardClicked(boardName: string) {
-    this.boardClicked.emit(boardName);
+  addBoard(value: string): void {
+    this.entitiesService.addBoard(value);
+    this.boards = this.entitiesService.getAllBoards();
   }
 
-  onDeleteBoard(boardName: string) {
-    const index = this.boards.indexOf(boardName);
-    if (index !== -1) {
-      this.boards.splice(index, 1);
+  removeBoard(id: number): void {
+    this.entitiesService.removeBoardById(id);
+    this.boards = this.entitiesService.getAllBoards();
+  }
+
+  addList(boardId: number, listName: string): void {
+    if (!listName) {
+      return;
     }
+    this.entitiesService.addList(boardId, listName);
+  }
+
+  removeList(boardId: number, listId: number): void {
+    this.entitiesService.deleteListById(boardId, listId);
   }
 }

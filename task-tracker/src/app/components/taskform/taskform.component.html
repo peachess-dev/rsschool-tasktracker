@@ -1,0 +1,40 @@
+<form [formGroup]="form" class="task-form">
+  <div class="header">
+    <span class="p-float-label">
+      <input pInputText type="text" formControlName="title" />
+      <label htmlFor="title">Title</label>
+    </span>
+    <small
+      id="title-help"
+      class="p-error"
+      *ngIf="form.controls['title']?.errors?.['title']"
+      >Please enter a valid title.
+    </small>
+  </div>
+
+  <span class="p-float-label">
+    <input pInputText type="text" formControlName="description" />
+    <label htmlFor="description">Description</label>
+  </span>
+  <small
+    id="description-help"
+    class="p-error"
+    *ngIf="form.controls['description']?.errors?.['description']"
+    >Please enter a valid description.
+  </small>
+
+  <span class="p-float-label">
+    <p-calendar
+      formControlName="dueDate"
+      placeholder="enter your dueDate"
+      [showIcon]="true"
+    />
+    <label htmlFor="dueDate"></label>
+  </span>
+  <small
+    id="dueDate-help"
+    class="p-error"
+    *ngIf="form.controls['dueDate']?.errors?.['dueDate']"
+    >Please enter a valid dueDate.
+  </small>
+</form>

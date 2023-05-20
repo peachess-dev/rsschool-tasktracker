@@ -1,0 +1,24 @@
+.list-container {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+}
+
+.list-header {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: darkgrey;
+}
+
+.list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1rem 1rem;
+}
+
+.list-content li {
+  text-decoration: none;
+}

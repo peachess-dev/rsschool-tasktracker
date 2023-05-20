@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PrimengModule } from './primeng-imports.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,10 +14,37 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { BoardsComponent } from './components/boards/boards.component';
+import { BoardComponent } from './components/new-board/new-board.component';
+import { ListComponent } from './components/list/list.component';
+import { TaskComponent } from './components/task/task.component';
+import { TaskformComponent } from './components/taskform/taskform.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, WelcomePageComponent, LoginComponent, ErrorComponent, RegistrationComponent, MainPageComponent, NavigationComponent, BoardsComponent],
-  imports: [BrowserModule, AppRoutingModule, PrimengModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent, // Core
+    FooterComponent, // Core
+    WelcomePageComponent,
+    LoginComponent, // Core
+    ErrorComponent, // Core
+    RegistrationComponent, // Core
+    MainPageComponent,
+    NavigationComponent, // Core
+    BoardsComponent, // Boards
+    BoardComponent, // boards
+    ListComponent, // Boards
+    TaskComponent, // boards
+    TaskformComponent, // boards
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PrimengModule,
+    FormsModule,
+    ReactiveFormsModule,
+    // CoreModule
+    // BoardsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

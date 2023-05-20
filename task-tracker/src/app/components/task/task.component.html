@@ -1,0 +1,56 @@
+<div>
+  <p-card [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+      <div class="flex justify-content-around flex-wrap">
+        <h3>{{ task.title }}</h3>
+        <div>
+          <p-button
+            icon="pi pi-pencil"
+            styleClass="p-button-raised p-button-text p-button-rounded "
+            (click)="isEditing = !isEditing"
+          ></p-button>
+        </div>
+        <div>
+          <p-button
+            icon="pi pi-times"
+            styleClass="p-button-raised p-button-text p-button-rounded p-button-danger"
+            (click)="onDeleteTask()"
+          ></p-button>
+        </div>
+      </div>
+    </ng-template>
+    <!-- Content -->
+    <ng-template pTemplate="content">
+      <div *ngIf="!isEditing">
+        <p>
+          Task id:
+          {{ task.id }}
+        </p>
+        <p>
+          Task description:
+          {{ task.description }}
+        </p>
+        <p>Task dueDate: {{ task.dueDate | date : "dd MMM yyyy" }}</p>
+      </div>
+      <app-taskform [(task)]="task" *ngIf="isEditing"></app-taskform>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+      <div *ngIf="isEditing">
+        <p-button
+          label="Save"
+          icon="pi pi-check"
+          (click)="saveChanges(task)"
+        ></p-button>
+        <p-button
+          label="Cancel"
+          icon="pi pi-times"
+          styleClass="p-button-secondary"
+          [style]="{ 'margin-left': '.5em' }"
+          (click)="cancelEditing(task)"
+        ></p-button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
+<div></div>
