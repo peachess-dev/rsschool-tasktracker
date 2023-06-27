@@ -1,0 +1,61 @@
+<div class="login-container">
+  <div class="login-form" [formGroup]="form">
+    <h2>Work Wise</h2>
+    <p>Sign up to continue</p>
+
+    <span class="p-float-label">
+      <input
+        pInputText
+        type="email"
+        formControlName="email"
+        placeholder="enter your email"
+      />
+      <label htmlFor="email">E-mail</label>
+    </span>
+    <small
+      id="email-help"
+      class="p-error"
+      *ngIf="form.controls['email']?.errors?.['email']"
+      >Please enter a valid email address.
+    </small>
+    <small
+      id="email-help"
+      class="p-error"
+      *ngIf=" form.controls['email']?.dirty && form.controls['email']?.errors?.['required']"
+    >
+      E-mail is required.
+    </small>
+
+    <span class="p-float-label">
+      <p-password formControlName="password" [feedback]="false"></p-password>
+      <label htmlFor="password">Password</label>
+    </span>
+    <small
+      id="password-help"
+      class="p-error"
+      *ngIf="
+        !form.controls['password'].valid && form.controls['password'].touched
+      "
+      >Please enter a valid password.
+    </small>
+
+    <span>
+      <p-checkbox
+        inputId="checkbox"
+        formControlName="terms"
+        [binary]="true"
+      ></p-checkbox>
+      <label htmlFor="checkbox"
+        >By signing up, I accept Terms of Service and acknowledge the Privacy
+        Policy.</label
+      >
+    </span>
+
+    <p-button
+      (click)="handleSubmit()"
+      label="Sign up"
+      styleClass="p-button-raised"
+    ></p-button>
+    <a routerLink="/login">Already have an account? Log in</a>
+  </div>
+</div>

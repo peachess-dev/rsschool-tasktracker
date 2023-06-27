@@ -1,0 +1,38 @@
+<div class="boards-container">
+  <div class="boards-nav">
+    <!-- Display all boards names -->
+    <div *ngFor="let board of boards">
+      <p-button label="{{ board.name }}" styleClass="p-button-help"></p-button>
+    </div>
+    <!-- Add Board form -->
+    <form (submit)="addBoard(nameInput)">
+      <!-- <label for="name">Board Name:</label>
+      <input type="text" id="name" name="name" required /> -->
+      <p-button label="Add Board" styleClass="p-button-success"></p-button>
+    </form>
+  </div>
+
+  <!-- Board list -->
+  <div *ngFor="let board of boards">
+    <div class="boards-header">
+      <h2>{{ board.name }}</h2>
+      <p-button
+        label="Remove Board"
+        styleClass="p-button-warning"
+        (click)="removeBoard(board.id)"
+      ></p-button>
+    </div>
+
+    <!-- List list -->
+    <div class="boards-content">
+      <div class="list-content">
+        <ul>
+          <li *ngFor="let list of board.lists">
+            <app-list [list]="list"></app-list>
+          </li>
+        </ul>
+      </div>
+      <p-button label="Add List" styleClass="p-button-success"></p-button>
+    </div>
+  </div>
+</div>

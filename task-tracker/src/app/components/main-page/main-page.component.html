@@ -1,0 +1,11 @@
+<div class="main-container">
+  <div class="navigation">
+    <app-navigation></app-navigation>
+  </div>
+  <div class="boards">
+    <app-boards></app-boards>
+  </div>
+  <div class="board">
+    <app-board *ngIf="selectedBoard" [boardName]="selectedBoard"></app-board>
+  </div>
+</div>

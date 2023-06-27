@@ -1,0 +1,21 @@
+<div class="navigation-container">
+  <div class="nav-menu">
+    <div class="my-boards">
+      <p-button
+        label="My boards"
+        styleClass="p-button-outlined p-button-secondary"
+      ></p-button>
+      <p-button
+        label="+"
+        styleClass="p-button-rounded p-button-text p-button-secondary"
+        (click)="onCreateBoard()"
+      ></p-button>
+    </div>
+    <div *ngFor="let board of boards">
+      <p-button
+        label="{{ board }}"
+        styleClass="p-button-outlined p-button-secondary"
+      ></p-button>
+    </div>
+  </div>
+</div>

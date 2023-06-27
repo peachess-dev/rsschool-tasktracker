@@ -1,0 +1,19 @@
+<div class="board">
+  <div class="board-header">
+    <p>{{ boardName }}</p>
+    <button (click)="onDelete()">Delete</button>
+  </div>
+  <div class="tasks" *ngFor="let task of tasks">
+    <div class="tasks-header">
+      <h4>{{ task.title }}</h4>
+      <p-button
+        icon="pi pi-times"
+        styleClass="p-button-danger p-button-sm"
+        class="btn-delete"
+      ></p-button>
+    </div>
+    <p>{{ task.description }}</p>
+    <p>{{ task.dueDate | date : "dd/MM/yyyy" }}</p>
+    <p>{{ task.completed }}</p>
+  </div>
+</div>

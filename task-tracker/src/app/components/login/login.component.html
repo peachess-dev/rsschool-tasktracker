@@ -1,0 +1,47 @@
+<div class="login-container">
+  <div class="login-form" [formGroup]="loginForm">
+    <h2>Work Wise</h2>
+    <p>Log in to continue</p>
+    <span class="p-float-label">
+      <input
+        pInputText
+        type="email"
+        formControlName="email"
+        placeholder="enter your email"
+      />
+      <label htmlFor="email">E-mail</label>
+    </span>
+    <small
+      id="email-help"
+      class="p-error"
+      *ngIf="
+        !loginForm.controls['email'].valid &&
+        loginForm.controls['email'].touched
+      "
+      >Please enter a valid email.
+    </small>
+
+    <span>
+      <span class="p-float-label">
+        <p-password formControlName="password" [feedback]="false"></p-password>
+        <label htmlFor="password">Password</label>
+      </span>
+      <small
+        id="password-help"
+        class="p-error"
+        *ngIf="
+          !loginForm.controls['password'].valid &&
+          loginForm.controls['password'].touched
+        "
+        >Please enter a valid password.
+      </small>
+    </span>
+
+    <p-button
+      (click)="handleSubmit()"
+      label="Continue"
+      styleClass="p-button-raised"
+    ></p-button>
+    <a routerLink="/registration">Create an account</a>
+  </div>
+</div>
